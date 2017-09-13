@@ -11,7 +11,11 @@ else if(argv[0] == "video") {
 }
 
 var urls = argv[1];
-var dir = checkDir("music/"+argv[2]+"/");
+var dir = "music/";
+if(argv[2] != undefined) {
+  dir = "music/"+argv[2]+"/";
+}
+var dir = checkDir(dir);
 
 playlist(urls);
 function playlist(url) {
