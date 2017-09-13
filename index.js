@@ -4,7 +4,7 @@ var youtubedl = require('youtube-dl');
 var format = "";
 var argv = process.argv.slice(2);
 if(argv[0] == "audio") {
-  format = "m4a";
+  format = "bestaudio";
 }
 else if(argv[0] == "video") {
   format = "mp4";
@@ -20,14 +20,19 @@ var dir = checkDir(dir);
 playlist(urls);
 function playlist(url) {
     'use strict';
-    var video = youtubedl(url, ["-f "+format], { cwd: __dirname });
+    var video = youtubedl(url,
+      [
+        "-f "+format
+        // "-h"
+      ],
+      { cwd: __dirname });
 
     var size = 0;
     video.on('info', function(info) {
       console.log('Download started');
       console.log('filename: ' + info._filename);
       console.log('size: ' + info.size);
-        video.pipe(fs.createWriteStream(dir+info._filename, { flags: 'a' }));
+        video.pipe(fs.createWriteStream(dir+info.filename, { flags: 'a' }));
         size = info.size;
     });
 
