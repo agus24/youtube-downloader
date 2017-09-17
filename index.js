@@ -11,7 +11,7 @@ else if(argv[0] == "video") {
 }
 
 var urls = argv[1];
-var dir = "music/";
+var dir = "/usr/local/var/www/htdocs/music/music/";
 if(argv[2] != undefined) {
   dir = "music/"+argv[2]+"/";
 }
