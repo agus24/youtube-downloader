@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "youtube-dl": "^1.11.1"
+    "youtube-dl": "^3.0.2"
   },
   "devDependencies": {},
   "scripts": {
-    "run": "node index.js"
+    "audio": "node index.js audio",
+    "video": "node index.js video"
   },
   "author": "",
   "license": "ISC"
