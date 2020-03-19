@@ -11,7 +11,7 @@ else if(argv[0] == "video") {
   format = "mp4"
 }
 
-let urls = argv[1];
+let urls = argv[1]
 let dir = CONFIG.base_dir;
 if(argv[2] != undefined) {
   dir = "music/"+argv[2]+"/"
